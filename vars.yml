@@ -1,0 +1,4 @@
+# vars file for postgresql
+name: admin
+password: admin
+
