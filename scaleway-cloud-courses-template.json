@@ -1,0 +1,37 @@
+{
+   "variables": {
+    "SCALEWAY_ORGANIZATION": "{{env `SCALEWAY_ORGANIZATION`}}",
+    "api_token": "{{env `SCW_TOKEN`}}",
+    "image": "59531865-de4a-4ed2-9431-1a7f301d54c3",
+    "ssh_private": "{{env `HOME`}}/.ssh/id_rsa"
+  },
+
+
+  "builders": [
+    {
+      "api_access_key": "{{ user `SCALEWAY_ORGANIZATION` }}",
+      "api_token": "{{ user `api_token` }}",
+      "server_name": "rubjohn",
+      "image_name": "rubenpacker-image",
+      "snapshot_name": "rubenpacker-snapshot",
+      "image": "{{ user `image` }}",
+      "region": "ams1",
+      "commercial_type": "START1-S",
+      "ssh_private_key_file": "{{ user `ssh_private` }}",
+      "type": "scaleway",
+      "ssh_username": "root"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "postgresql.yml"
+    },
+    {
+      "type": "shell",
+      "inline": ["sync"]
+    }
+
+  ]
+}
+
