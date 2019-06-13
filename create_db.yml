@@ -13,9 +13,4 @@
   become_user: postgres
   no_log: true
 
-- name: create trgm extension
-  postgresql_ext:
-    db: "{{ item.name }}"
-    name: pg_trgm
-  become_user: postgres
 
