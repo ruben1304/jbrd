@@ -11,7 +11,7 @@
     {
       "api_access_key": "{{ user `SCALEWAY_ORGANIZATION` }}",
       "api_token": "{{ user `api_token` }}",
-      "server_name": "rubjohn",
+      "server_name": "scw-stupefied-hermann",
       "image_name": "rubenpacker-image",
       "snapshot_name": "rubenpacker-snapshot",
       "image": "{{ user `image` }}",
