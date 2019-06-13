@@ -15,7 +15,7 @@ resource "scaleway_server" "terraformruben" {
   type  = "START1-S"
 }
 resource "scaleway_ip" "ip" {
-  server = "${data.scaleway_server.terraformruben.id}"
+  server = "${scaleway_server.terraformruben.id}"
 }
 
 
